@@ -1,0 +1,463 @@
+<!doctype html> 
+
+<html lang="en"> 
+
+<head> 
+
+  <!-- What is the purpose of the lang="en" attribute? --> changes the language of the document to english.
+
+  <meta charset="utf-8" /> 
+
+  <!-- Why is the character encoding specified? --> specifies the character encoding to be used for the document, which displays the text correctly in browsers.
+
+  <title>Torino Pizza Summer Menu</title> 
+
+ 
+
+  <style> 
+
+    html { 
+
+      font-size: 100%; 
+
+    } 
+
+    body { 
+
+      line-height: 1.75; 
+
+      margin: 0 15px 0 40px; 
+
+      background-image: 
+
+        linear-gradient(rgba(31, 45, 50, 0.78), rgba(31, 45, 50, 0.78)), 
+
+        url(img/bullseye.png); 
+
+      /* what does linear-gradient do? */ it creates a gradient which creates a transition between two colors.
+
+      /* What does the alpha value in rgba() control? */ te tranparancy of the color, where 0 is fully transparent and 1 is fully opaque.
+
+      /* Why is background-color still needed with a background image? */ it gives it a falllback color in the case the image doesn't load.
+
+      background-position: top center; 
+
+      background-attachment: fixed; 
+
+      background-color: #1f2d32; 
+
+      color: #f3eee3; 
+
+    } 
+
+    header { 
+
+      margin-top: 0; 
+
+      padding: 48px 16px 32px 16px; 
+
+      text-align: center; 
+
+      /* What is the difference between margin and padding? */ margin is the space outside of the element, while padding is the space inside the element.
+
+    } 
+
+    p { 
+
+      color: #d8e1df; 
+
+      /* What effect does color have on the text? */ changes the color of the text.
+
+    } 
+
+    a { 
+
+      color: #8fd1c5; 
+
+      font-weight: 600; 
+
+      text-decoration-thickness: 1.6px; 
+
+      text-underline-offset: 2.88px; 
+
+    } 
+
+    a:visited { 
+
+      color: #c2b0df; 
+
+    } 
+
+    a:hover { 
+
+      color: #1f2d32; 
+
+      background-color: #f2c078; 
+
+      border-radius: 3.2px; 
+
+      text-decoration: none; 
+
+    } 
+
+    a:focus { 
+
+      outline: 2px solid #f2c078; 
+
+      outline-offset: 3px; 
+
+    } 
+
+    /* what does a:hover style do */ cange the look of the link when the mouse is over it.
+
+    /* What is the difference between :hover, :visited, and :active? */ the difference is that :hover is when the mouse is over the link, :visited is when the link has been clicked and visited, and :active is when the link is being clicked.
+
+    /* When does the :focus style appear? */ when user clicks on the link
+
+    h1 { 
+
+      color: #f2c078; 
+
+      text-shadow: 1.6px 1.6px 0.8px #4a9bb6; 
+
+      /* What does text-shadow change? */ i adds a shadow to the text.
+
+    } 
+
+    h2 { 
+
+      font-size: 1rem; 
+
+      text-transform: uppercase; 
+
+      letter-spacing: 8px; 
+
+      color: #8fd1c5; 
+
+      /* What does text-transform do? */ i can transform the test to uppercase.
+
+      /* What happens when letter-spacing changes? */ i can either increase or decrease the space between letters.
+
+    } 
+
+    #info { 
+
+      color: #b8dcd5; 
+
+      /* What is the difference between an id selector and a class selector? */ i selector is used to select a specific element with a specific id, while a class selector is used to select multiple elements.
+
+    } 
+
+    .price { 
+
+      font-style: italic; 
+
+      color: #f0c987; 
+
+    } 
+
+    .label { 
+
+      font-variant: small-caps; 
+
+      font-style: normal; 
+
+    } 
+
+    p.warning { 
+
+      font-size: small; 
+
+      color: #f2a39a; 
+
+    } 
+
+    /* what html element does p.warning select */ p.warning selects all p elements with the class warning.
+
+    /* Why does p.warning select fewer elements than .warning? */ p only selects p elements with the class warning, while warning selects all elements with the class warning.
+
+    /* What happens if .price is changed to #price? */ it will only selecet the element with the id price, instead of all elements.
+
+ 
+
+    h1, 
+
+    h2, 
+
+    #info { 
+
+      text-align: center; 
+
+    } 
+
+    /*  
+
+      why the style are separated by commas,   */  because it applies the same style to all three elements, h1, h2 etc.
+
+    /* What happens if these selectors are written as separate rules? */ 
+
+    .newitem { 
+
+      color: #f2c078; 
+
+    } 
+
+  </style> 
+
+</head> 
+
+<body> 
+
+  <header> 
+
+    <h1>Torino Pizza<br />&bull; Summer Menu &bull;</h1> 
+
+    <!-- What does the <br> element do? --> 
+
+    <div id="info"> 
+
+      <p> 
+
+        Baker's Corner, Seekonk, Massachusetts<br /> 
+
+        <span class="label">Hours: Monday through Thursday:</span> 11 to 9, 
+
+        <span class="label">Friday and Saturday;</span> 11 to midnight 
+
+      </p> 
+
+    </div> 
+
+  </header> 
+
+  <section id="appetizers"> 
+
+    <!-- Why is this content placed inside a section element? --> 
+
+    <h2>Appetizers</h2> 
+
+    <p> 
+
+      This season, we explore the spicy flavors of the southwest in our 
+
+      appetizer collection. 
+
+    </p> 
+
+    <dl> 
+
+      <dt>Black bean purses</dt> 
+
+      <dd> 
+
+        Spicy black bean and a blend of mexican cheeses wrapped in sheets of 
+
+        phyllo and baked until golden. <span class="price">$3.95</span> 
+
+      </dd> 
+
+      <dt class="newitem"> 
+
+        Southwestern napoleons with lump crab &mdash; 
+
+        <strong>new item!</strong> 
+
+        <!-- How does the newitem class make this item different? --> 
+
+      </dt> 
+
+      <dd> 
+
+        Layers of light lump crab meat, bean and corn salsa, and our handmade 
+
+        flour tortillas. <span class="price">$7.95</span> 
+
+      </dd> 
+
+    </dl> 
+
+  </section> 
+
+  <section id="entrees"> 
+
+    <h2>Main courses</h2> 
+
+    <p> 
+
+      Big, bold flavors are the name of the game this summer. Allow us to 
+
+      assist you with finding the perfect wine. 
+
+    </p> 
+
+    <dl> 
+
+      <dt class="newitem"> 
+
+        Jerk rotisserie chicken with fried plantains &mdash; 
+
+        <strong>new item!</strong> 
+
+      </dt> 
+
+      <dd> 
+
+        Tender chicken slow-roasted on the rotisserie, flavored with spicy and 
+
+        fragrant jerk sauce and served with fried plantains and fresh mango. 
+
+        <strong>Very spicy.</strong> <span class="price">$12.95</span> 
+
+      </dd> 
+
+      <dt>Shrimp sate kebabs with peanut sauce</dt> 
+
+      <dd> 
+
+        Skewers of shrimp marinated in lemongrass, garlic, and fish sauce then 
+
+        grilled to perfection. Served with spicy peanut sauce and jasmine 
+
+        rice. <span class="price">$12.95</span> 
+
+      </dd> 
+
+      <dt>Grilled skirt steak with mushroom fricasee</dt> 
+
+      <dd> 
+
+        Flavorful skirt steak marinated in asian flavors grilled as you like 
+
+        it<sup>*</sup>. Served over a blend of sauteed wild mushrooms with a 
+
+        side of blue cheese mashed potatoes. <span class="price">$16.95</span> 
+
+        <!-- Why is sup used for the asterisk? --> 
+
+      </dd> 
+
+    </dl> 
+
+  </section> 
+
+  <section id="toast"> 
+
+    <h2>Traditional Toasts</h2> 
+
+    <p> 
+
+      The ultimate comfort food, our traditional toast recipes are adapted 
+
+      from <cite>The Whitehouse Cookbook</cite> published in 1887. 
+
+    </p> 
+
+    <dl> 
+
+      <dt>Cream toast</dt> 
+
+      <dd> 
+
+        Simple cream sauce over highest quality toasted bread, baked daily. 
+
+        <span class="price">$3.95</span> 
+
+      </dd> 
+
+      <dt>Mushroom toast</dt> 
+
+      <dd> 
+
+        Layers of light lump crab meat, bean and corn salsa, and our handmade 
+
+        flour tortillas. <span class="price">$6.95</span> 
+
+      </dd> 
+
+      <dt>Nun's toast</dt> 
+
+      <dd> 
+
+        Onions and hard-boiled eggs in a cream sauce over buttered hot toast. 
+
+        <span class="price">$6.95</span> 
+
+      </dd> 
+
+      <dt>Apple toast</dt> 
+
+      <dd> 
+
+        Sweet, cinnamon stewed apples over delicious buttery grilled bread. 
+
+        <span class="price">$6.95</span> 
+
+      </dd> 
+
+    </dl> 
+
+  </section> 
+
+  <section id="dessert"> 
+
+    <h2>Dessert Selection</h2> 
+
+    <p> 
+
+      Be sure to save room for our desserts, made daily by our own 
+
+      <a href="http://www.jwu.edu/college.aspx?id=19510">Johnson & Wales</a> 
+
+      <!-- What does the href attribute specify? --> 
+
+      trained pastry chef. 
+
+    </p> 
+
+    <dl> 
+
+      <dt class="newitem"> 
+
+        Lemon chiffon cake &mdash; <strong>new item!</strong> 
+
+      </dt> 
+
+      <dd> 
+
+        Light and citrus flavored sponge cake with buttercream frosting as 
+
+        light as a cloud. <span class="price">$2.95</span> 
+
+      </dd> 
+
+      <dt class="newitem">Molten chocolate cake</dt> 
+
+      <dd> 
+
+        Bubba's special dark chocolate cake with a warm, molten center. Served 
+
+        with or without a splash of almond liqueur. 
+
+        <span class="price">$3.95</span> 
+
+      </dd> 
+
+    </dl> 
+
+  </section> 
+
+  <footer> 
+
+    <p class="warning"> 
+
+      <sup>*</sup> We are required to warn you that undercooked food is a 
+
+      health risk. 
+
+     </p> 
+
+  </footer> 
+
+</body> 
+
+</html> 
